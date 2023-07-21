@@ -1,1 +1,1 @@
-# to-do-list
+# A Simple To Do List Using HTML, CSS, JS
