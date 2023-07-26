@@ -9,10 +9,11 @@
 <body>
     <div class="container">
         <div id="task-bar">
-            <input id="input" type="text" placeholder="Add New Task" value="">
+            <input id="input" type="text" onkeypress="handleKeyPress(event)" placeholder="Add New Task" value="">
             <button id="add" onclick="addNewTask()">Add</button>
         </div>
-        <div id="list"></div>
+        <ul id="list">
+        </ul>
     </div>
     <script src="main.js"></script>
 </body>

@@ -57,6 +57,38 @@ body {
 #list {  
     width: 100%;
     padding: 30px;
-    height: 1000px;
+    /* height: 1000px; */
     border-radius: 10px;
+    margin: 0px;
+    list-style-type: none;
 }
+
+.removeButton {
+    border: 0px;
+    background-color: white;
+}
+
+ul li.checked {
+    text-decoration: line-through;
+}
+
+ul li button {
+    font-size: 14pt;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+ul li button:hover {
+    background-color: #edeef0;
+} 
+
+ul li {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 12pt;
+    font-weight: 500;
+}
+
