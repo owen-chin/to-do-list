@@ -2,19 +2,16 @@ const input = document.getElementById("input");
 const add = document.getElementById("add");
 const list = document.getElementById("list");
 
-function handleKeyPress(event) {
-    // if enter key is pressed
-    if (event.keyCode === 13) {
-        addNewTask()
-    };
-}
+const handleKeyPress = (event) => {
+    if (event.keyCode === 13) addNewTask();
+};
 
-function addNewTask() {
+const addNewTask = () => {
     const inputValue = input.value;
     if (inputValue.trim() === "") {
-        alert("Theres nothing here");
+        alert("There's nothing here");
     } else {
-        console.log("there is something here", inputValue);
+        console.log("There is something here", inputValue);
         input.value = "";
 
         const newLi = document.createElement("li");
@@ -22,15 +19,15 @@ function addNewTask() {
 
         const removeButton = document.createElement("button");
         removeButton.textContent = "\u00D7";
-        removeButton.className = "removeButton"
+        removeButton.className = "removeButton";
         newLi.appendChild(removeButton);
 
         list.appendChild(newLi);
-    };
+    }
     saveData();
-}
+};
 
-list.addEventListener("click", function(x) {
+list.addEventListener("click", (x) => {
     if (x.target.tagName === "LI") {
         x.target.classList.toggle("checked");
         saveData();
@@ -40,11 +37,11 @@ list.addEventListener("click", function(x) {
     }
 });
 
-function saveData() {
+const saveData = () => {
     localStorage.setItem("data", list.innerHTML);    
-}
+};
 
-function loadData() {
+const loadData = () => {
     list.innerHTML = localStorage.getItem("data");
-}
+};
 loadData();
